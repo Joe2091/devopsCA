@@ -8,7 +8,10 @@ export default [
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "commonjs",
-      globals: globals.node,
+      globals: {
+        ...globals.node,
+        ...globals.mocha,
+      },
     },
     rules: {
       "semi": ["error", "always"],
